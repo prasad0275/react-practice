@@ -57,8 +57,8 @@ function Login() {
                     {...register("email",{
                         required : true,
                         validate : { 
-                            matchPattern : (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
-                            "Email address must be a valid address" 
+                            matchPattern : (value) => (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
+                            "Email address must be a valid address" )
                         }
                     })}
                     
@@ -67,9 +67,9 @@ function Login() {
                     label="Password : "
                     placeholder="Enter your password"
                     type="password"
-                    {...register("password"),{
+                    {...register("password",{
                         required: true
-                    }}
+                    })}
                     
                     />
                     <Button type="submit" className="w-full" >Sign in</Button>

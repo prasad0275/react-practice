@@ -36,7 +36,6 @@ function Header (){
         }
     ]
     return(
-        <>
         <header className="py-3 shadow bg-gray-500 ">
             <Container>
                 <nav className="flex">
@@ -70,7 +69,6 @@ function Header (){
                 </ul>
             </Container>
         </header>
-        </>
     )
 }
 
