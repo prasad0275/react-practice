@@ -1,4 +1,4 @@
-import { Login as LoginComponent } from "../components/Login"
+import { Login as LoginComponent } from "../components"
 
 function Login(){
     return (
@@ -8,4 +8,4 @@ function Login(){
     )
 }
 
-export default Login;
+export default Login

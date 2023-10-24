@@ -30,7 +30,7 @@ function App() {
         <Header />
         <h1>Mega blog with AppWrite</h1>
         <main>
-            {/* <Outlet/> */}
+            <Outlet/> 
         </main>
         
         <Footer />

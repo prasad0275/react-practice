@@ -2,17 +2,17 @@ import { useState, useEffect } from "react"
 import { Container, PostCard } from "../components"
 import appwriteSerivce from "../appwrite/config"
 
-function Home(){
+function Home() {
     const [posts, setPosts] = useState([])
     useEffect(() => {
-        appwriteSerivce.getPosts().then((posts)=> {
-            if(posts){
+        appwriteSerivce.getPosts().then((posts) => {
+            if (posts) {
                 setPosts(posts.documents)
             }
         })
     }, [])
 
-    if(posts.length === 0){
+    if (posts.length === 0) {
         return (
             <div className="w-full py-8 mt-4 text-center">
                 <Container>
@@ -33,11 +33,11 @@ function Home(){
             <Container>
                 <div className="flex flex-wrap">
                     {
-                        posts.map((post)=>{
-                            <div key={post.$id} className="p-2 w-1/4">
-                                <Post post={post} />
-                            </div>
-                        })
+                        posts.map((post) => (
+                        <div key={post.$id} className="p-2 w-1/4">
+                            <PostCard {...post} />
+                        </div>
+                        ))
                     }
                 </div>
             </Container>

@@ -1,4 +1,4 @@
-import useState from 'react'
+import { useState } from "react"
 import { Link, useNavigate } from 'react-router-dom'
 import authService from '../appwrite/auth'
 import { login as authLogin } from '../store/authSlice'
@@ -20,8 +20,9 @@ function SignUp() {
                 const userData = await authService.getCurrentUser()
                 if (userData) {
                     dispatch(login(userData))
-                    navigate("/")
+                    
                 }
+                navigate("/")
             }
         } catch (error) {
             setError(error.message)
@@ -53,11 +54,11 @@ function SignUp() {
                         label="Full Name : "
                         placeholder="Enter your full name"
                         {...register("name",{
-                            required:True 
+                            required:true 
                         })}
                          />
 
-<Input
+                    <Input
                         label="Email: "
                         placeholder="Enter your email"
                         type="email"
