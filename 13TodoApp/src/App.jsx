@@ -19,6 +19,7 @@ function App() {
 
   return (
     <>
+    <h1>Commit your Todos</h1>
     <Input />
     <Todos />
     </>
